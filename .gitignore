@@ -1,0 +1,15 @@
+# Secret keys — never commit these
+.env
+
+# Lead data — contains real customer info
+leads/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Mac system file
+.DS_Store
+
+# Virtual environment — too large for GitHub
+venv/

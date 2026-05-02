@@ -1,15 +1,20 @@
 # Secret keys — never commit these
 .env
 
-# Lead data — contains real customer info
+# Lead data — contains real customer info, keep off GitHub
 leads/
 
-# Python cache files
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
 
 # Mac system file
 .DS_Store
 
-# Virtual environment — too large for GitHub
+# Virtual environment — too large, recreated from requirements.txt
 venv/
+
+# Editor folders
+.vscode/
+.idea/

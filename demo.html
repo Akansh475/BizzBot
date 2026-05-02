@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himalayan Kitchen — Authentic Indian Cuisine</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #e65c00;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: #444;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: #e65c00; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #e65c00 0%, #f9a825 100%);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+    .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 14px; }
+    .hero p  { font-size: 20px; opacity: 0.92; margin-bottom: 32px; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: white;
+      color: #e65c00;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    /* ── Section ── */
+    section { padding: 70px 40px; max-width: 1100px; margin: 0 auto; }
+    h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; color: #1a1a1a; }
+    .section-sub { color: #666; font-size: 16px; margin-bottom: 40px; }
+
+    /* ── Menu Cards ── */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .menu-card {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .menu-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    .menu-card-img {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+    }
+    .menu-card-body { padding: 14px; }
+    .menu-card-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .menu-card-body p  { font-size: 13px; color: #666; margin-bottom: 8px; }
+    .menu-card-body .price { font-size: 15px; font-weight: 800; color: #e65c00; }
+
+    /* ── Info Strip ── */
+    .info-strip {
+      background: #fff8f0;
+      border-radius: 16px;
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      overflow: hidden;
+      border: 1px solid #ffe0b2;
+    }
+    .info-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 28px 24px;
+      border-right: 1px solid #ffe0b2;
+      text-align: center;
+    }
+    .info-item:last-child { border-right: none; }
+    .info-icon { font-size: 30px; margin-bottom: 10px; }
+    .info-item h3 { font-size: 14px; color: #888; font-weight: 600; margin-bottom: 4px; }
+    .info-item p  { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+
+    /* ── Testimonials ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .review-card {
+      background: #f8f9fa;
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .stars { color: #f9a825; font-size: 16px; margin-bottom: 10px; }
+    .review-card p { font-size: 14px; color: #444; line-height: 1.6; margin-bottom: 12px; }
+    .reviewer { font-size: 13px; font-weight: 700; color: #888; }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 14px;
+    }
+    footer strong { color: #e65c00; }
+
+    /* ── Chatbot hint banner ── */
+    .chat-hint {
+      background: #e65c00;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hint for demo viewers -->
+  <div class="chat-hint">
+    💬 Try the BizBot chatbot — click the orange button in the bottom-right corner!
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-logo">🏔️ Himalayan Kitchen</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Taste the Himalayas 🏔️</h1>
+    <p>Authentic North Indian & Nepali cuisine, made with love since 2010</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary">📋 View Full Menu</a>
+      <a href="#" class="btn-secondary">📞 Reserve a Table</a>
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+  <section>
+    <h2>Our Favourites</h2>
+    <p class="section-sub">Handpicked dishes our guests keep coming back for</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:#fff3e0;">🍛</div>
+        <div class="menu-card-body">
+          <h3>Dal Makhani</h3>
+          <p>Slow-cooked black lentils in a rich buttery tomato gravy</p>
+          <span class="price">₹280</span>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:#fce4ec;">🫓</div>
+        <div class="menu-card-body">
+          <h3>Butter Naan</h3>
+          <p>Freshly baked in our tandoor, served with herb butter</p>
+          <span class="price">₹60</span>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:#e8f5e9;">🥟</div>
+        <div class="menu-card-body">
+          <h3>Veg Momos</h3>
+          <p>Steamed Nepali dumplings with spicy sesame chutney</p>
+          <span class="price">₹160</span>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img" style="background:#e3f2fd;">🍗</div>
+        <div class="menu-card-body">
+          <h3>Chicken Tikka</h3>
+          <p>Tandoor-grilled chicken with mint chutney & onion salad</p>
+          <span class="price">₹320</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Strip -->
+  <section style="padding-top: 0;">
+    <div class="info-strip">
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <h3>Opening Hours</h3>
+        <p>11 AM – 11 PM Daily</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <h3>Location</h3>
+        <p>14, Mall Road, Mussoorie</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <h3>Reservations</h3>
+        <p>+91 98765 43210</p>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🚚</div>
+        <h3>Home Delivery</h3>
+        <p>Swiggy & Zomato</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section>
+    <h2>What Our Guests Say</h2>
+    <p class="section-sub">Over 500 five-star reviews and counting</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"The Dal Makhani is the best I've had outside of Delhi. Cozy atmosphere and super friendly staff!"</p>
+        <span class="reviewer">— Priya S., Mumbai</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Momos were absolutely heavenly. We visited twice in the same trip to Mussoorie!"</p>
+        <span class="reviewer">— Rahul K., Delhi</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Great family dining experience. The staff was warm and the food arrived quickly. Highly recommend!"</p>
+        <span class="reviewer">— Anita M., Dehradun</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <strong>Himalayan Kitchen</strong>. All rights reserved. | Made with ❤️ in Mussoorie</p>
+    <p style="margin-top:8px; font-size:12px;">Chatbot powered by <strong>BizBot</strong></p>
+  </footer>
+
+  <!--
+    ═══════════════════════════════════════════════
+    BizBot Embed — This is all a client needs to add
+    Just these 2 script tags at the bottom of the page
+    ═══════════════════════════════════════════════
+  -->
+  <script>
+    window.ChatbotConfig = {
+      business_id: "himalayan_kitchen",
+      botName:     "Himalayan Kitchen Assistant",
+      themeColor:  "#e65c00",
+      serverUrl:   "http://localhost:5000"
+    };
+  </script>
+  <script src="http://localhost:5000/static/embed.js"></script>
+
+</body>
+</html>

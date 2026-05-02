@@ -1,0 +1,26 @@
+# render.yaml — BizBot deployment config for Render.com
+#
+# How to deploy:
+#   1. Push your code to GitHub
+#   2. Go to render.com → New → Web Service
+#   3. Connect your GitHub repo
+#   4. Render auto-detects this file and sets everything up
+#   5. Add your environment variables in Render dashboard:
+#        GROQ_API_KEY, EMAIL_SENDER, EMAIL_APP_PASSWORD
+#
+# That's it — your bot is live on the internet!
+
+services:
+  - type: web
+    name: bizbot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false        # You set this manually in Render dashboard
+      - key: EMAIL_SENDER
+        sync: false        # You set this manually in Render dashboard
+      - key: EMAIL_APP_PASSWORD
+        sync: false        # You set this manually in Render dashboard
+    healthCheckPath: /health
